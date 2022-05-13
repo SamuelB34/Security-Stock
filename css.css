@@ -73,8 +73,11 @@ p{
       grid-template-columns: repeat(2, 1fr);
       justify-items: center;
   }
-
-
+@media (min-width: 600px) {
+    .contCams {
+        margin-top: 18rem;
+    }
+}
 .text-cam1{
     grid-row: 2;
     grid-column: 1;
