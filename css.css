@@ -1,0 +1,117 @@
+body{
+    background-image: url(img/bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+}
+.contenedor{
+    /* align-content: center; */
+    margin-top: 17rem;
+    display: flex;
+    justify-content: center;
+}
+.contenedorDatos{
+    display: flex;
+    flex-direction: column;
+    background-color: #282828;
+    width: 40%;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+p{
+    font-size: 1.4rem;
+    color: #E0E0E0;
+    margin-left: 11%;
+    margin-bottom: 3%;
+    font-family: 'Poppins', sans-serif;
+}
+.input{
+    display: flex;
+    justify-content: center;
+}
+.input-text{
+    width: 80%;
+    padding: .6rem;
+    border-radius: .5rem;
+    background-color: #777777;
+    color: #fff;
+}
+::placeholder {
+    color: #A3A3A3;
+    font-family: 'Poppins', sans-serif;
+  }
+  .input-inf{
+     margin-bottom: 2rem;
+  }
+  .boton{
+      display: flex;
+      justify-content: center;
+  }
+  .botones{
+      padding: .4rem;
+      padding-left: 4rem;
+      padding-right: 4rem;
+      background-color: #777777;
+      color: #fff;
+      text-decoration: none;  
+      border-radius: 0.5rem;  
+      border: none;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+  }
+  .camaras{
+      width: 50%;
+  }
+  .contenedorCamaras{
+    width: 100%;
+  }
+  .contCams{
+      margin-top:15rem;
+      display: grid;
+      grid-template-rows: auto, auto, auto, auto;
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: center;
+  }
+
+
+.text-cam1{
+    grid-row: 2;
+    grid-column: 1;
+}
+.cam1{ 
+    grid-row: 1;
+    grid-column: 1;
+}
+.text-cam2{
+    grid-row: 2;
+    grid-column: 2;
+}
+.cam2{ 
+    grid-row: 1;
+    grid-column: 2;
+}
+.text-cam3{
+    grid-row: 4;
+    grid-column: 1;
+}
+.cam3{ 
+    grid-row: 3;
+    grid-column: 1;
+}
+.text-cam4{
+    grid-row: 4;
+    grid-column: 2;
+}
+.cam4{ 
+    grid-row: 3;
+    grid-column: 2;
+}
+.text-cam{
+    font-size: 1.4rem;
+    color: #E0E0E0;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+

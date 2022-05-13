@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preload" href="css.css" as="style"><!-- aqui mandamos a llamar el CSS -->
+    <link href="css.css" rel="stylesheet"> <!-- aqui mandamos a llamar el CSS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700&family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+    <title>Security</title>
+    
+</head>
+<body>
+    <div class="contenedor">
+        <div class="contenedorDatos">
+
+            <script src="js.js"></script>
+            <form name=form >
+                <p>Username: </p>
+                <div class="input">
+                    <input class="input-text" name=user type="text" placeholder="Ej. Admin123">
+                </div>
+                <p>Password: </p>
+                <div class="input">
+                    <input type="password" name=password class="input-text input-inf" placeholder="Password">
+                </div>
+
+                <div class="boton">
+                    <button onclick=enter(event) class="botones wsm-100" >Enter</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
