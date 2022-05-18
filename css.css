@@ -1,5 +1,5 @@
-body{
-    background-image: url(./Img/bg.png);
+body {
+    background-color: #282828;
     background-repeat: no-repeat;
     background-size: cover;
     height: 400px;
@@ -83,20 +83,18 @@ p {
 
 .contenedorCamaras {
     width: 100%;
-  }
-  .contCams{
-      margin-top:15rem;
-      display: grid;
-      grid-template-rows: auto, auto, auto, auto;
-      grid-template-columns: repeat(2, 1fr);
-      justify-items: center;
-  }
-@media (min-width: 600px) {
-    .contCams {
-        margin-top: 18rem;
-    }
 }
-.text-cam1{
+
+.contCams {
+    margin-top: 15rem;
+    display: grid;
+    grid-template-rows: auto, auto, auto, auto;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+}
+
+
+.text-cam1 {
     grid-row: 2;
     grid-column: 1;
 }
