@@ -29,13 +29,16 @@
 
     <div class="contenedorCamaras">
         <div class="contCams">
-            <h2 class="text-cam1 text-cam">Cam 1</h2>
+            <h2 class="text-cam1 text-cam">Puerta Norte <p id="puerta-norte"></p>
+            </h2>
             <img class="camaras cam1" src="img.jpg">
 
-            <h2 class="text-cam2 text-cam">Cam 2</h2>
+            <h2 class="text-cam2 text-cam">Puerta Sureste<p id="puerta-sureste"></p>
+            </h2>
             <img class="camaras cam2" src="img.jpg">
 
-            <h2 class="text-cam3 text-cam">Cam 3</h2>
+            <h2 class="text-cam3 text-cam">Puerta Suroeste<p id="puerta-suroeste"></p>
+            </h2>
             <img class="camaras cam3" src="img.jpg">
 
             <h2 class="text-cam4 text-cam">Cam 4</h2>
@@ -45,25 +48,64 @@
 
     <script src="js.js"></script>
     <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-analytics.js";
-
-        const firebaseConfig = {
-
-            apiKey: "AIzaSyBqt9bIZHNiWcLJJRxk0hG5JMwi2KHh-XM",
-            authDomain: "proyecto-56cfe.firebaseapp.com",
-            projectId: "proyecto-56cfe",
-            storageBucket: "proyecto-56cfe.appspot.com",
-            messagingSenderId: "9375405309",
-            appId: "1:9375405309:web:0810ad12af4bb1a7945a94",
-            measurementId: "G-ZZG0Q8YFC6"
-
+        const getData1 = async () => {
+            console.log("Datos Norte");
+            await fetch(
+                "https://proyecto1-94c74-default-rtdb.firebaseio.com/Almac%C3%A9n.json"
+            )
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data);
+                    console.log(data["Puerta Norte"]);
+                    const estadoPuertaNorte = data["Puerta Norte"].Estado;
+                    console.log(estadoPuertaNorte);
+                    const puertaNorteDiv = document.getElementById("puerta-norte");
+                    puertaNorteDiv.innerHTML = estadoPuertaNorte;
+                });
         };
 
-        const app = initializeApp(firebaseConfig);
+        getData1();
+        setInterval(getData1, 1000);
+    </script>
+    <script>
+        const getData2 = async () => {
+            console.log("Datos Sureste");
+            await fetch(
+                "https://proyecto1-94c74-default-rtdb.firebaseio.com/Almac%C3%A9n.json"
+            )
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data);
+                    console.log(data["Puerta Sureste"]);
+                    const estadoPuertaSureste = data["Puerta Sureste"].Estado;
+                    console.log(estadoPuertaSureste);
+                    const puertaSuresteDiv = document.getElementById("puerta-sureste");
+                    puertaSuresteDiv.innerHTML = estadoPuertaSureste;
+                });
+        };
 
-        const analytics = getAnalytics(app);
+        getData2();
+        setInterval(getData2, 1000);
+    </script>
+    <script>
+        const getData = async () => {
+            console.log("Datos Suroeste");
+            await fetch(
+                "https://proyecto1-94c74-default-rtdb.firebaseio.com/Almac%C3%A9n.json"
+            )
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data);
+                    console.log(data["Puerta Suroeste"]);
+                    const estadoPuertaSuroeste = data["Puerta Suroeste"].Estado;
+                    console.log(estadoPuertaSuroeste);
+                    const puertaSuroesteDiv = document.getElementById("puerta-suroeste");
+                    puertaSuroesteDiv.innerHTML = estadoPuertaSuroeste;
+                });
+        };
 
+        getData();
+        setInterval(getData, 1000);
     </script>
 </body>
 
