@@ -81,6 +81,10 @@ p {
     width: 50%;
 }
 
+.camaras2 {
+    width: 25%;
+}
+
 .contenedorCamaras {
     width: 100%;
 }
@@ -88,7 +92,7 @@ p {
 .contCams {
     margin-top: 15rem;
     display: grid;
-    grid-template-rows: auto, auto, auto, auto;
+    grid-template-rows: auto, auto;
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
 }
@@ -114,24 +118,19 @@ p {
     grid-column: 2;
 }
 
-.text-cam3 {
-    grid-row: 4;
-    grid-column: 1;
+.cont-cams{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.cam3 {
-    grid-row: 3;
-    grid-column: 1;
+.cont-txt{
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
-
-.text-cam4 {
-    grid-row: 4;
-    grid-column: 2;
-}
-
-.cam4 {
-    grid-row: 3;
-    grid-column: 2;
+.cont-cams2{
+    width: 33%;
 }
 
 .text-cam {
