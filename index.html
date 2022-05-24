@@ -16,8 +16,7 @@
         rel="stylesheet">
 
 
-    <title>Security</title>
-
+    <title>Cameras</title>
 </head>
 
 <body>
@@ -26,27 +25,204 @@
         <h1 class="title">Security Shock</h1>
     </div>
 
-    <div class="contenedor">
-        <div class="contenedorDatos">
+    <a class="nav1" href="index.html">Log Out</a>
 
-            <script src="js.js"></script>
-            <form name=form>
-                <p>Username: </p>
-                <div class="input">
-                    <input class="input-text" name=user type="text" placeholder="Ej. Admin123">
-                </div>
-                <p>Password: </p>
-                <div class="input">
-                    <input type="password" name=password class="input-text input-inf" placeholder="Password">
-                </div>
+    <div class="contenedorCamaras">
+        <div class="contCams">
+            <h2 class="text-cam1 text-cam">Puerta Norte <p id="puerta-norte"></p>
+                <p id="fecha-norte"></p>
+                <p id="tiempo-norte"></p>
+            </h2>
+            <img class="camaras cam1" src="img.jpg">
 
-                <div class="boton">
-                    <button onclick=enter(event) class="botones wsm-100">Enter</button>
-                </div>
-            </form>
+            <h2 class="text-cam2 text-cam">Puerta Sureste<p id="puerta-sureste"></p>
+                <p id="fecha-sureste"></p>
+                <p id="tiempo-sureste"></p>
+            </h2>
+            <img class="camaras cam2" src="img.jpg">
+
+        </div>
+
+        <div class="cont-cams">
+            <img class="camaras2 cam3" src="img.jpg">
+        </div>
+        <div class="cont-txt">
+            <h2 class="text-cam3 text-cam">Puerta Suroeste<p id="puerta-suroeste"></p>
+                <p id="fecha-suroeste"></p>
+                <p id="tiempo-suroeste"></p>
+            </h2>
         </div>
     </div>
 
+    <script src="js.js"></script>
+    <script type="module">
+        const getData1 = async () => {
+            console.log("Datos Norte");
+            await fetch(
+                "https://proyecto1-94c74-default-rtdb.firebaseio.com/Almac%C3%A9n.json"
+            )
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data);
+                    console.log(data["Puerta Norte"]);
+                    const estadoPuertaNorte = data["Puerta Norte"].Estado;
+                    console.log(estadoPuertaNorte);
+                    const puertaNorteDiv = document.getElementById("puerta-norte");
+                    puertaNorteDiv.innerHTML = estadoPuertaNorte;
+                });
+        };
+
+        getData1();
+        setInterval(getData1, 1000);
+    </script>
+    <script>
+        const getData2 = async () => {
+            console.log("Datos Sureste");
+            await fetch(
+                "https://proyecto1-94c74-default-rtdb.firebaseio.com/Almac%C3%A9n.json"
+            )
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data);
+                    console.log(data["Puerta Sureste"]);
+                    const estadoPuertaSureste = data["Puerta Sureste"].Estado;
+                    console.log(estadoPuertaSureste);
+                    const puertaSuresteDiv = document.getElementById("puerta-sureste");
+                    puertaSuresteDiv.innerHTML = estadoPuertaSureste;
+                });
+        };
+
+        getData2();
+        setInterval(getData2, 1000);
+    </script>
+    <script>
+        const getData = async () => {
+            console.log("Datos Suroeste");
+            await fetch(
+                "https://proyecto1-94c74-default-rtdb.firebaseio.com/Almac%C3%A9n.json"
+            )
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data);
+                    console.log(data["Puerta Suroeste"]);
+                    const estadoPuertaSuroeste = data["Puerta Suroeste"].Estado;
+                    console.log(estadoPuertaSuroeste);
+                    const puertaSuroesteDiv = document.getElementById("puerta-suroeste");
+                    puertaSuroesteDiv.innerHTML = estadoPuertaSuroeste;
+                });
+        };
+
+        getData();
+        setInterval(getData, 1000);
+    </script>
+    <script type="module">
+        const getDate = async () => {
+            console.log("Fecha de ultimo movimiento en puerta norte: ");
+            await fetch("https://proyecto1-94c74-default-rtdb.firebaseio.com/Almac%C3%A9n.json")
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data);
+                    console.log(data["Puerta Norte"]);
+                    const fechaPuertaNorte = data["Puerta Norte"].FechaUltima_Movimiento;
+                    console.log(fechaPuertaNorte);
+                    const fechaNorteDiv = document.getElementById("fecha-norte");
+                    fechaNorteDiv.innerHTML = fechaPuertaNorte;
+                });
+        };
+
+        getDate();
+        setInterval(getDate, 1000);
+    </script>
+    <script type="module">
+        const getDate1 = async () => {
+            console.log("Fecha de ultimo movimiento en puerta sureste: ");
+            await fetch("https://proyecto1-94c74-default-rtdb.firebaseio.com/Almac%C3%A9n.json")
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data);
+                    console.log(data["Puerta Sureste"]);
+                    const fechaPuertaSureste = data["Puerta Sureste"].FechaUltima_Movimiento;
+                    console.log(fechaPuertaSureste);
+                    const fechaSuresteDiv = document.getElementById("fecha-sureste");
+                    fechaSuresteDiv.innerHTML = fechaPuertaSureste;
+                });
+        };
+
+        getDate1();
+        setInterval(getDate1, 1000);
+    </script>
+    <script type="module">
+        const getDate2 = async () => {
+            console.log("Fecha de ultimo movimiento en puerta suroeste: ");
+            await fetch("https://proyecto1-94c74-default-rtdb.firebaseio.com/Almac%C3%A9n.json")
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data);
+                    console.log(data["Puerta Suroeste"]);
+                    const fechaPuertaSuroeste = data["Puerta Suroeste"].FechaUltima_Movimiento;
+                    console.log(fechaPuertaSuroeste);
+                    const fechaSuroesteDiv = document.getElementById("fecha-suroeste");
+                    fechaSuroesteDiv.innerHTML = fechaPuertaSuroeste;
+                });
+        };
+
+        getDate2();
+        setInterval(getDate2, 1000);
+    </script>
+    <script type="module">
+        const getTime = async () => {
+            console.log("Tiempo del ultimo movimiento en puerta norte: ");
+            await fetch("https://proyecto1-94c74-default-rtdb.firebaseio.com/Almac%C3%A9n.json")
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data);
+                    console.log(data["Puerta Norte"]);
+                    const tiempoPuertaNorte = data["Puerta Norte"].TiempoUltimo_Movimiento;
+                    console.log(tiempoPuertaNorte);
+                    const tiempoNorteDiv = document.getElementById("tiempo-norte");
+                    tiempoNorteDiv.innerHTML = tiempoPuertaNorte;
+                });
+        };
+
+        getTime();
+        setInterval(getTime, 1000);
+    </script>
+    <script type="module">
+        const getTime1 = async () => {
+            console.log("Tiempo del ultimo movimiento en puerta sureste: ");
+            await fetch("https://proyecto1-94c74-default-rtdb.firebaseio.com/Almac%C3%A9n.json")
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data);
+                    console.log(data["Puerta Sureste"]);
+                    const tiempoPuertaSureste = data["Puerta Sureste"].TiempoUltimo_Movimiento;
+                    console.log(tiempoPuertaSureste);
+                    const tiempoSuresteDiv = document.getElementById("tiempo-sureste");
+                    tiempoSuresteDiv.innerHTML = tiempoPuertaSureste;
+                });
+        };
+
+        getTime1();
+        setInterval(getTime1, 1000);
+    </script>
+    <script type="module">
+        const getTime2 = async () => {
+            console.log("Tiempo del ultimo movimiento en puerta suroeste: ");
+            await fetch("https://proyecto1-94c74-default-rtdb.firebaseio.com/Almac%C3%A9n.json")
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data);
+                    console.log(data["Puerta Suroeste"]);
+                    const tiempoPuertaSuroeste = data["Puerta Suroeste"].TiempoUltimo_Movimiento;
+                    console.log(tiempoPuertaSuroeste);
+                    const tiempoSuroesteDiv = document.getElementById("tiempo-suroeste");
+                    tiempoSuroesteDiv.innerHTML = tiempoPuertaSuroeste;
+                });
+        };
+
+        getTime2();
+        setInterval(getTime2, 1000);
+    </script>
 </body>
 
 </html>
