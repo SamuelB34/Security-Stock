@@ -87,51 +87,26 @@ p {
 
 .contCams {
     margin-top: 15rem;
-    display: grid;
-    grid-template-rows: auto, auto, auto, auto;
-    grid-template-columns: repeat(2, 1fr);
-    justify-items: center;
+    display: flex;
+    justify-content: space-around;
+
+}
+.contText{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
 }
 
-
-.text-cam1 {
-    grid-row: 2;
-    grid-column: 1;
+.cont-cams2{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
 }
-
-.cam1 {
-    grid-row: 1;
-    grid-column: 1;
-}
-
-.text-cam2 {
-    grid-row: 2;
-    grid-column: 2;
-}
-
-.cam2 {
-    grid-row: 1;
-    grid-column: 2;
-}
-
-.text-cam3 {
-    grid-row: 4;
-    grid-column: 1;
-}
-
-.cam3 {
-    grid-row: 3;
-    grid-column: 1;
-}
-
-.text-cam4 {
-    grid-row: 4;
-    grid-column: 2;
-}
-
-.cam4 {
-    grid-row: 3;
-    grid-column: 2;
+.cont-txt{
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 
 .text-cam {
@@ -174,6 +149,11 @@ p {
     transition: 500ms;
 }
 
+
+.camaraf{
+    width: 25%;
+}
+
 @media (min-width: 700px) {
     .contCams {
         margin-top: 2rem;
@@ -192,11 +172,6 @@ p {
         justify-content: center;
         margin-top: 1rem;
     }
-
-    .camaras {
-        width: 100%;
-    }
-
     .botones {
         padding-left: 3rem;
         padding-right: 3rem;
